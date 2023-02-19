@@ -1,14 +1,14 @@
 .login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5rem;
-  background-image: url('https://media.istockphoto.com/id/1189029599/photo/passenger-train-india.jpg?s=612x612&w=0&k=20&c=gO7cJw0zhVhVrQ4DIG_Tr0llD52_dS-DKsWU43CWiXs=');
-  /* height: 100vh; */
+  background-image: url("https://media.istockphoto.com/id/1189029599/photo/passenger-train-india.jpg?s=612x612&w=0&k=20&c=gO7cJw0zhVhVrQ4DIG_Tr0llD52_dS-DKsWU43CWiXs=");
+  height: 100vh;
   background-size: cover;
   width: 100vw;
- 
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
 }
 .Page-container {
   height: 440px;
@@ -16,10 +16,8 @@
   background-color: rgb(255, 253, 248);
   display: flex;
   justify-content: center;
-  padding-top: 3rem;
   border-radius: 15px;
   border-top-width: 10px;
-
 }
 
 .loginPage-title {
@@ -40,9 +38,6 @@ form {
 input {
   width: 100%;
   height: 2rem;
-  outline: none;
-  padding-left: 10px;
-  padding-right: 15px;
   outline: none;
 }
 .icons {
@@ -67,7 +62,7 @@ input {
 }
 .login-btn {
   text-align: center;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   height: 2.5rem;
   background-color: green;
   color: white;
@@ -76,6 +71,7 @@ input {
 .link {
   text-decoration: none;
 }
+
 .user {
   height: 2.3rem;
   width: 10rem;
@@ -89,18 +85,12 @@ input {
   font-style: italic;
   font-family: cursive;
 }
-.choose-master-student{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;height: 100%;
-    width: 100%;
-    padding: 10px;
-    /* background-image: linear-gradient(rgb(232, 223, 223) ,rgb(196, 184, 193),white); */
-    background-size: cover;
-}
-.master-link{
+.master-link {
   background-color: transparent;
   border-width: 0;
   color: white;
+}
+
+input[type="text"]{
+  padding: 0;
 }

@@ -1,25 +1,22 @@
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
-import Login from './Components/Login'
-import Home from './Components/Home'
-// import AccountCreate from './components/CreateAccount'
+import AgentLogin from './Components/AgentLogin'
 import AdminLogin from './Components/AdminLogin'
 import ProtectedRoute from './Components/ProtectRoute'
 import './App.css'
 import HomePage from './Components/Homepage'
 import AgentFullData from './Components/AgentFullData'
 import GetOneAgent from './Components/GetOneAgent'
+import AccountData from './Components/AccountData'
 
 const App = () => (
   <BrowserRouter>
     <Switch>
-      {/* <Route exact path='/adminlogin' component={AdminLogin} /> */}
-      <Route exact path='/' component={Home} />
-      {/* <Route exact path='/create-account/:status' component={AccountCreate} /> */}
-      <Route exact path='/login' component={Login} />
+      <ProtectedRoute exact path='/acountData' component={AccountData} />
+      <Route exact path='/agentLogin' component={AgentLogin} />
       <Route exact path='/adminlogin' component={AdminLogin} />
-      <Route exact path='/agentDetails' component={AgentFullData} />
-      <Route exact path='/getoneagent' component={GetOneAgent} />
-      <ProtectedRoute exact path='/homepage' component={HomePage} />
+      <ProtectedRoute exact path='/agentFull' component={AgentFullData} />
+      <ProtectedRoute exact path='/getoneagent' component={GetOneAgent} />
+      <ProtectedRoute exact path='/' component={HomePage} />
     </Switch>
   </BrowserRouter>
 )

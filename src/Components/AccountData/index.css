@@ -1,0 +1,45 @@
+.account-main-container{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #212121; */
+}
+.account-sub-container{
+    background-color: hsl(0, 100%, 99%);
+    border: solid 1px #15aed5;
+    border-radius: 10px;
+    width: 50%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    align-self: center;
+    margin-top: 30px;
+    font-weight: bold;
+}
+.heading-account{
+    color: red;
+    text-align: center;
+}
+.para{
+    color: rgb(5, 23, 159);
+}
+
+@media screen and (min-width:600px){
+    .account-sub-container{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (min-width:768px){
+    .account-sub-container{
+        width: 250px;
+        height: 250px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+}

@@ -17,17 +17,15 @@
 }
 .ticket-container{
     display: flex;
-    flex-direction: row;
     justify-content: center;
-
     align-items: center;
     flex-wrap: wrap;
-    
+   
 }
 
 .each-ticket{
-    width: 357px;
-    height: 200px;
+    /* width: 357px;
+    height: 250px; */
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin: 10px;
@@ -41,15 +39,15 @@
 }
 
 .logo-ticket{
-    height: 50px;
+    height: 100px;
     width: 50;
 }
 
 .ticket-sub{
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     align-self: flex-start;
     border-width: 2px;

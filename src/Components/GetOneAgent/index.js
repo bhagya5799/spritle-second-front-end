@@ -7,7 +7,7 @@ const GetOneAgent = () => {
     const [allBooking, setAllBooking] = useState([])
     const getAllBooking = async () => {
         const id = localStorage.getItem("id")
-        const url = `https://spirtle-second-assignment.onrender.com/get-booking-agent${id}`
+        const url = `https://spirtle-second-assignment.onrender.com/get-booking-agent/${id}`
         const options = {
             method: "GET",
             headers: {
@@ -33,12 +33,12 @@ const GetOneAgent = () => {
             <div className='ticket-container'>
                 {allBooking.map(eachData => (
                     <div className='each-ticket' id={eachData.id}>
-                        <img className="logo-ticket" src="https://res.cloudinary.com/duv0mhzrm/image/upload/v1674488347/png-transparent-logo-train-train-text-logo-mode-of-transport-thumbnail-removebg-preview_fcnsc1.png" alt='logo' />
+                        <img className="logo-ticket" src="https://thumbs.dreamstime.com/z/train-logo-concept-icon-illustration-design-170455146.jpg" alt='logo' />
                         <div className='ticket-sub'>
                             <p className='para-ticket'>Name: {eachData.name}</p>
                             <p className='para-ticket'>Age: {eachData.age}</p>
                             <p className='para-ticket'>Seat {eachData.seatNumber}</p>
-                            <p className='para-ticket'>Banglore To Mysore</p>
+                            <p className='para-ticket'>Bangalore To Goa</p>
                         </div>
                     </div>
                 ))}

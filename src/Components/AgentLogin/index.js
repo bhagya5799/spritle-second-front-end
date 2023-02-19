@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import './index.css'
 
-const Login = (props) => {
+const AgentLogin = (props) => {
     const { history } = props
     const [email, setEmail] = useState('')
     const [userPass, setPassword] = useState('')
     const [errorMessage, setErrMessage] = useState('')
     const submitForm = async (e) => {
-        console.log('ok')
         e.preventDefault()
         const userApi = 'https://spirtle-second-assignment.onrender.com/agent-login'
         const userDetails = {
@@ -30,7 +28,8 @@ const Login = (props) => {
             setErrMessage('')
             localStorage.setItem("status", true)
             localStorage.setItem("id", data.id)
-            history.replace("/homepage")
+            localStorage.setItem("limit", data.limit)
+            history.replace("/")
         }
         else {
             setErrMessage(data.msg)
@@ -44,18 +43,19 @@ const Login = (props) => {
 
     return (
         <div className='login-container'>
+        
             <div className='choose-master-student'>
                 <div className='Page-container'>
                     <form autoComplete="off" onSubmit={submitForm}>
                         <h2 className='loginPage-title'>Agent  Login</h2>
                         <label htmlFor='email'>Email</label>
                         <div className='input-card'>
-                            <input id='email' type="text" value={email} placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
+                            <input id='email' type="text" value={email} placeholder='Type your Email ID here' onChange={(e) => setEmail(e.target.value)} />
                             <p className='icons' ></p>
                         </div>&nbsp; <br /> <br />
-                        <label htmlFor='Mailpassword'>password</label>
+                        <label htmlFor='Mailpassword'>Password</label>
                         <div className='input-card'>
-                            <input id='Mailpassword' type="password" value={userPass} placeholder='password' onChange={(e) => setPassword(e.target.value)} />
+                            <input id='Mailpassword' type="password" value={userPass} placeholder='Type your Password here' onChange={(e) => setPassword(e.target.value)} />
                             <p className='icons'></p>
                         </div>&nbsp; <br /> <br />
                         <button type='submit' className='login-btn'>Login</button>
@@ -70,4 +70,4 @@ const Login = (props) => {
         </div>
     )
 }
-export default Login
+export default AgentLogin

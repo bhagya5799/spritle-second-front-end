@@ -39,7 +39,7 @@ const AgentFullData = () => {
                           <p className='para-ticket'>Age: {eachData.age}</p>
                           <p className='para-ticket'>Seat {eachData.seatNumber}</p>
                           <p className='para-ticket'>Bangalore To Pune</p>
-                          
+                          <p>date: {eachData.date}</p>
                       </div>
                   </div>
               ))}
