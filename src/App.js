@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import Login from './Components/Login'
+import Home from './Components/Home'
+// import AccountCreate from './components/CreateAccount'
+import AdminLogin from './Components/AdminLogin'
+import ProtectedRoute from './Components/ProtectRoute'
+import './App.css'
+import HomePage from './Components/Homepage'
+import AgentFullData from './Components/AgentFullData'
+import GetOneAgent from './Components/GetOneAgent'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      {/* <Route exact path='/adminlogin' component={AdminLogin} /> */}
+      <Route exact path='/' component={Home} />
+      {/* <Route exact path='/create-account/:status' component={AccountCreate} /> */}
+      <Route exact path='/login' component={Login} />
+      <Route exact path='/adminlogin' component={AdminLogin} />
+      <Route exact path='/agentDetails' component={AgentFullData} />
+      <Route exact path='/getoneagent' component={GetOneAgent} />
+      <ProtectedRoute exact path='/homepage' component={HomePage} />
+    </Switch>
+  </BrowserRouter>
+)
 
-export default App;
+export default App
